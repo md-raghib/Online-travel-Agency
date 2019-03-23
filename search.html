@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Flyhot..A Journey to remember</title>
+    <script src="flight.js"></script>
     <link href="style.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,6 +15,7 @@
 </head>
 </head>
 <body>
+     
 
 	<!-- ***** Header Area Start ***** -->
     <header class="header_area" id="header">
@@ -58,9 +60,10 @@
                     <div class="hero-content"> 
                         <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.2s" style="margin-top:-100px; padding: 40px 10px; background-color:silver;"> 
                             <div class="row ">
-                            <div class="col-2 col-sm-3 col-md "><i class="fas fa-map-marker-alt"></i>&nbsp;Bangalore - New-Delhi</div>| 
-                            <div class="col-2 col-sm-3 col-md"><i class="fas fa-calendar-alt"></i>&nbsp;21 Feb 2019</div>|
-                            <div class="col-2 col-sm-3 col-md"><i class="fas fa-search"></i>&nbsp;Modify Search</div>
+
+                            <div class="col-2 col-sm-3 col-md"><i class="fas fa-map-marker-alt"></i>&nbsp;<p id="origin"></p></div>|  
+                            <div class="col-2 col-sm-3 col-md"><i class="fas fa-calendar-alt"></i>&nbsp;<p id="Date"></p></div>|
+                            <div class="col-2 col-sm-3 col-md"><i class="fas fa-search"></i>&nbsp;<p id="Search"></p></div>
                                 </div>
                         </div>
                     </div>
@@ -80,7 +83,7 @@
                                     <div class="row" style="border:1px solid #bec0cc; margin-top:5px;">
                                         <div class="col-sm-4" style="border:1px solid #bec0cc;">
                                             0 Stops</br>
-                                            <i class="fa fa-rupee"></i> 28,000
+                                            <i class="fa fa-rupee"></i> <p id="price"></p>
                                         </div>
                                         <div class="col-sm-4" style="border:1px solid #bec0cc;">
                                             1 Stops </br>
@@ -141,11 +144,19 @@
                                 </div>
                                 <div class="col-lg-8" style=" height:auto; margin-left:35px;margin-top:-60px;">
                                      <div class="row " style="border:1px solid #bec0cc; margin-top:5px;">
-                                        <img src="images/indigo.png" style="height:30px; width:30px; margin:15px;"> &nbsp;&nbsp;&nbsp;<p style="margin:15px;">indigo</br> 6E-427</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <p style="margin:15px;"><h7>19:20</h7></br>Bangalore</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <p style="margin:15px;"><h7>03:20</h7></br>New-Delhi</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <p style="margin:15px;"><h7>7h 40m</h7></br>1 Stop</p>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <img src="images/indigo.png" style="height:30px; width:30px; margin:15px;">
+                                        <div class="col-xs-2" style="height:10px; margin-right:10px;">
+                                            <p style="margin:15px;" id="AirlineCode"></p><p style="margin:15px;" id="Flightnumber"></p>
+                                        </div>
+                                         <div class="col-xs-2" style="height:10px; margin-right:10px;">
+                                        <p style="margin:15px;" id="DepartureTime"></p><p style="margin:20px;" id="Departure"></p>
+                                    </div>
+                                     <div class="col-xs-2" style="height:10px; margin-right:10px;">
+                                        <p style="margin:15px;" id="ArrivalTime"></p><p id="Destination"></p>
+                                    </div>
+                                     <div class="col-xs-2" style="height:10px; margin-right:10px;">
+                                        <p style="margin:15px;"id="Duration"></p><p id="Stops"></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                     </div>
                                        <div class="dorne-add-listings-btn" style="margin:15px;">
                                 <a href="#" class="btn dorne-btn">Book</a>
                             </div>
@@ -239,6 +250,25 @@ output.innerHTML = slider.value;
 slider.oninput = function() {
   output.innerHTML = this.value;
 }
+
+document.getElementById("origin").innerHTML = obj.origin + ",";
+document.getElementById("Date").innerHTML = obj.Date +",";
+document.getElementById("Search").innerHTML = obj.Search +",";
+document.getElementById("price").innerHTML = obj.price +",";
+document.getElementById("AirlineCode").innerHTML = obj.AirlineCode +",";
+document.getElementById("Flightnumber").innerHTML = obj.Flightnumber +",";
+document.getElementById("DepartureTime").innerHTML = obj.DepartureTime +",";
+document.getElementById("Destination").innerHTML = obj.Destination +",";
+document.getElementById("ArrivalTime").innerHTML = obj.ArrivalTime +",";
+document.getElementById("Duration").innerHTML = obj.Duration +",";
+document.getElementById("Departure").innerHTML = obj.Departure +",";
+document.getElementById("Stops").innerHTML = obj.Stops +",";
+document.write(txt());
+
+
+
+
+
 </script>
 </body>
 </html>
